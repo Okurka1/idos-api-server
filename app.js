@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 app.get('/odjezdy', (req, res) => {
-    const typ = req.query.typ;
+    const typ = req.query.typ?.toLowerCase();  // Převod na malá písmena
 
     if (typ === 'mhd') {
         res.json([
